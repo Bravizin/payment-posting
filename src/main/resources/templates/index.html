@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lançamento de Pagamento</title>
+</head>
+<body>
+<div align="center">
+
+    <h1>Lançamento de Pagamento</h1>
+    <a href="new">Novo Pagamento</a>
+    </br></br>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Pagamento ID</th>
+            <th>Título</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Imposto Externo</th>
+            <th>Comentário</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="payment: ${payments}">
+            <td th:text="${payment.id}">Pagamento ID</td>
+            <td th:text="${payment.title}">Título</td>
+            <td th:text="${payment.value}">Valor</td>
+            <td th:text="${payment.date}">Data</td>
+            <td th:text="${payment.comments}">Comentário</td>
+            <td>
+                <a th:href="@{'/edit/' + ${cartorio.id}}">Editar</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${cartorio.id}}">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

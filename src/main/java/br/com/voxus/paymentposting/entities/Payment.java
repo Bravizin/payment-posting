@@ -14,17 +14,21 @@ public class Payment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     private String title;
+
     private double value;
+
     private Calendar date;
+
     private String[] comments;
 
     public Payment(){
 
     }
 
-    public Payment(long id, String title, double value, Calendar date, String[] comments) {
+    public Payment(Long id, String title, double value, Calendar date, String[] comments) {
         this.id = id;
         this.title = title;
         this.value = value;
@@ -32,11 +36,11 @@ public class Payment implements Serializable {
         this.comments = comments;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
